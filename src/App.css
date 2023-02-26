@@ -98,10 +98,10 @@
   /* justify-content: space-evenly; */
 }
 
-.answer:hover,.tryAgn:hover{
-  color: white !important;
-  background-color: #f9a826 !important;
-  border-color: white !important;
+.answer:hover{
+  color: white ;
+  background-color: #f9a826;
+  border-color: white ;
 }
 
 .choise{
@@ -189,4 +189,10 @@
   color: #6fcf97;
   font-weight: 700;
   font-size: 30px;
+}
+
+.tryAgn:hover{
+  border-color: white !important;
+  background-color: #424582 !important;
+  color: white !important;
 }

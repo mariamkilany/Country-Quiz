@@ -10,7 +10,7 @@ function Question(props) {
     const random = props.random;
     const questions = ['Which country does this flag belong to?','is the capital of','What is the capital of']
     var i =0
-    const question = randomQ===1? country.capital[0]+' '+questions[randomQ]: randomQ===2? questions[randomQ]+' '+country.name.official : questions[randomQ];
+    const question = randomQ===1? country.capital[0]+' '+questions[randomQ]: randomQ===2? questions[randomQ]+' '+country.name.common : questions[randomQ];
     const choises=['','','','']
     console.log(randomQ)
     const newChoises = randomQ===2? choises.map((choise,index)=>{
@@ -23,10 +23,10 @@ function Question(props) {
     }):
     choises.map((choise,index)=>{
         if(index===randomAns)
-            return country.name.official
+            return country.name.common
         else {
             i++
-            return countries[parseInt(random+i)%250].name.official
+            return countries[parseInt(random+i)%250].name.common
         }
     })
     const handleCorrect =(answer)=>{
@@ -51,7 +51,7 @@ function Question(props) {
         {
             newChoises.map((choise,index)=>{
                 return(
-        <div className={`answer  ${isCorrect===index?'correct':''} ${isWrongIndex===index?'wrong':''}`} onClick={()=>{handleCorrect(index)}}>
+        <div className={`answer w3-center w3-animate-left  ${isCorrect===index?'correct':''} ${isWrongIndex===index?'wrong':''}`} onClick={()=>{handleCorrect(index)}}>
             <span className={`choise`}>{String.fromCharCode(65+index)}</span>
             <span className="ansTxt">
             {choise}
@@ -60,8 +60,8 @@ function Question(props) {
                 )
             })
         }
-        <div className={`row d-flex flex-row-reverse ${!done?'d-none':''}`} style={{paddingRight: '15px'}}>
-            <button className='btn nxtBtn col-5' onClick={handleNext} >Next</button>
+        <div className={`row d-flex flex-row-reverse  w3-animate-left ${!done?'d-none':''}`} style={{paddingRight: '15px'}}>
+            <button className='btn nxtBtn col-5 ' onClick={handleNext} >Next</button>
         </div>
         </>
     )
