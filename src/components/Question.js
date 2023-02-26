@@ -2,23 +2,21 @@ import React, { useContext} from 'react'
 import { ScoreContext } from '../App';
 
 function Question(props) {
-    const {isCorrect,isWrongIndex,done, handleNext,randomAns,setIsCorrect,setDone,setIsWrongIndex,count,setCount,setOut}=useContext(ScoreContext)
+    const {isCorrect,isWrongIndex,done, handleNext,randomAns,setIsCorrect,setDone,setIsWrongIndex,count,setCount}=useContext(ScoreContext)
     const country = props.country
-    console.log(country)
     const randomQ =parseInt(props.randomQ);
     const countries = props.countries
     const random = props.random;
     const questions = ['Which country does this flag belong to?','is the capital of','What is the capital of']
     var i =0
-    const question = randomQ===1? country.capital[0]+' '+questions[randomQ]: randomQ===2? questions[randomQ]+' '+country.name.common : questions[randomQ];
+    const question = randomQ===1? country.capital+' '+questions[randomQ]: randomQ===2? questions[randomQ]+' '+country.name.common : questions[randomQ];
     const choises=['','','','']
-    console.log(randomQ)
     const newChoises = randomQ===2? choises.map((choise,index)=>{
         if(index===randomAns)
-            return country.capital[0]
+            return country.capital
         else {
             i++
-            return countries[parseInt(random+i)%250].capital[0]
+            return countries[parseInt(random+i)%250].capital
         }
     }):
     choises.map((choise,index)=>{
@@ -43,7 +41,7 @@ function Question(props) {
     return (
         <>
         <div className="quesTxt">
-        {randomQ===0?<img src={country.flags.svg} className="flag" />:''}
+        {randomQ===0?<img src={country.flags.svg} className="flag" alt="flag" />:''}
             <h5 className="ques">
             {question}
             </h5>
@@ -51,7 +49,7 @@ function Question(props) {
         {
             newChoises.map((choise,index)=>{
                 return(
-        <div className={`answer w3-center w3-animate-left  ${isCorrect===index?'correct':''} ${isWrongIndex===index?'wrong':''}`} onClick={()=>{handleCorrect(index)}}>
+        <div key={index} className={`answer w3-center w3-animate-left  ${isCorrect===index?'correct':''} ${isWrongIndex===index?'wrong':''}`} onClick={()=>{handleCorrect(index)}}>
             <span className={`choise`}>{String.fromCharCode(65+index)}</span>
             <span className="ansTxt">
             {choise}

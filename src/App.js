@@ -5,7 +5,7 @@ import axios from 'axios'
 import loading from './Wedges-3s-200px.gif'
 import Question from './components/Question';
 import Result from './components/Result';
-import { CSSTransition } from 'react-transition-group';
+
 
 export const ScoreContext = createContext(null)
 
@@ -48,7 +48,7 @@ function App() {
     <h4 className="heading">Country Quiz</h4>
     <img src={svg} alt="hum" className="icon1" />
     {countries===null?
-    <img src={loading} className="loading" /> 
+    <img src={loading} className="loading" alt="loading" /> 
     :
     
     !out?
