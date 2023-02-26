@@ -36,3 +36,157 @@
     transform: rotate(360deg);
   }
 }
+
+.container{
+  height: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-image: url('./background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.quesCont{
+  min-height: 350px;
+  background-color: white;
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+  right: 50%;
+  border-radius: 20px;
+  padding: 20px;
+  
+}
+.heading{
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  top: -10%;
+  left: 0%;
+}
+
+.icon1{
+  position: absolute;
+  right: 0;
+  top: -62px;
+  width: 45%;
+}
+
+.ques{
+  font-size: 1rem !important;
+  color: #424582;;
+  font-weight: 700;
+}
+
+.quesTxt{
+  margin-top: 10%;
+  padding: 10px 0 10px 0;;
+}
+
+.answer{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  border: solid 1px #5256a1b5;
+  color: #5256a1b5;
+  font-weight: 500;
+  cursor: pointer;
+  /* justify-content: space-evenly; */
+}
+
+.answer:hover,.tryAgn:hover{
+  color: white !important;
+  background-color: #f9a826 !important;
+  border-color: white !important;
+}
+
+.choise{
+  padding: 5px
+}
+
+.ansTxt{
+  padding: 5px;
+  padding-left: 25px;;
+}
+
+.correct , .wrong{
+  color: white;
+  border-color: white;
+}
+.correct{
+  background-color: #60bf88;
+}
+
+.wrong{
+  background-color: #ea8282;
+}
+
+.correct:hover , .wrong:hover{
+  color: white;
+  border-color: white;
+}
+
+.correct:hover{
+  background-color: #60bf88;
+}
+
+.wrong:hover {
+  background-color: #ea8282;
+}
+
+.correct::after , .wrong::after{
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 24px;
+  min-width: 24px;
+}
+
+.correct::after{
+  background-image: url('./tick.png');
+}
+
+.wrong::after{
+  background-image: url('./cancel.png');
+}
+
+.loading{
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+  right: 50%;
+  width: 100px;
+}
+
+.flag{
+  width: 80px;
+  height: 50px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 3px 0px #00000085;
+}
+
+.nxtBtn{
+  background-color: #f9a826 !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.tryAgn{
+  border: solid 1.5px !important;
+  color: #3f3d56 !important;
+  font-size: 18px !important;
+  padding: 5px 25px !important;
+  font-weight: 500 !important;
+  margin-top: 30px !important;
+}
+
+.ans{
+  color: #6fcf97;
+  font-weight: 700;
+  font-size: 30px;
+}
