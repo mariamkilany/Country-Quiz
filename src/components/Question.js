@@ -9,14 +9,18 @@ function Question(props) {
     const random = props.random;
     const questions = ['Which country does this flag belong to?','is the capital of','What is the capital of']
     var i =0
-    const question = randomQ===1? country.capital+' '+questions[randomQ]: randomQ===2? questions[randomQ]+' '+country.name.common : questions[randomQ];
+    const question = randomQ===1? country.capital[0]+' '+questions[randomQ]: randomQ===2? questions[randomQ]+' '+country.name.common : questions[randomQ];
     const choises=['','','','']
     const newChoises = randomQ===2? choises.map((choise,index)=>{
         if(index===randomAns)
-            return country.capital
+            return country.capital[0]
         else {
             i++
+            while(countries[parseInt(random+i)%250].capital===null){
+                i++;
+            }
             return countries[parseInt(random+i)%250].capital
+            
         }
     }):
     choises.map((choise,index)=>{
